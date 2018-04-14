@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 from rest_framework import generics
 
 
-from viewtubejuggernaut.accounts.permissions import AnonymousPermission
+from viewtubejuggernaut.permissions import AnonymousPermission
 from viewtubejuggernaut.accounts.serializers import UserSerializer
 
 
@@ -21,4 +21,3 @@ class UserSignUpView(generics.CreateAPIView):
         user = serializer.save()
         user.set_password(password)
         user.save()
-
