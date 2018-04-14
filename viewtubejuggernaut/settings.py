@@ -9,6 +9,8 @@ https://docs.djangoproject.com/en/1.11/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 """
+from os.path import normpath, join
+
 import warnings
 import os
 
@@ -138,6 +140,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
+MEDIA_ROOT = normpath(join(BASE_DIR, 'media'))
+
+MEDIA_URL = '/media/'
 
 STATIC_URL = '/static/'
 
