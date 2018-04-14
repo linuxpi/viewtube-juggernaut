@@ -17,6 +17,6 @@ path = '/home/varunb94/viewtubejuggernaut'
 if path not in sys.path:
     sys.path.append(path)
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "viewtubejuggernaut.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "viewtubejuggernaut.deploy_settings")
 
 application = get_wsgi_application()
