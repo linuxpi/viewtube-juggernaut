@@ -9,8 +9,23 @@ https://docs.djangoproject.com/en/1.11/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 """
-
+import warnings
 import os
+
+from django.core.exceptions import ImproperlyConfigured
+
+
+def get_from_env(name):
+    try:
+        return os.environ[name]
+    except KeyError:
+        err = "Set the {} environment variable".format(name)
+
+        if DEBUG:
+            warnings.warn(err)
+        else:
+            raise ImproperlyConfigured(err)
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
