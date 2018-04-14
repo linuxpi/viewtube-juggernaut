@@ -19,4 +19,5 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include('viewtubejuggernaut.accounts.urls', namespace='accounts')),
+    url(r'^videos/', include('viewtubejuggernaut.videos.urls', namespace='videos')),
 ]
