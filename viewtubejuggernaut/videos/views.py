@@ -12,5 +12,5 @@ class VideoUploadViewSet(viewsets.ModelViewSet):
     http_method_names = ['get', 'post', 'patch', 'delete']
     queryset = VideoUpload.objects.all()
     serializer_class = VideoUploadSerializer
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly)
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly, )
 
