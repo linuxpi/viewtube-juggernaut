@@ -13,7 +13,7 @@ class VideoUpload(models.Model):
     thumbnail = models.ImageField(upload_to='thumbnails/', max_length=255)
     title = models.CharField(max_length=255)
     description = models.TextField(blank=True)
-    private = models.BooleanField(default=False)
+    is_private = models.BooleanField(default=False)
     uploaded_at = models.DateTimeField()
 
     def __unicode__(self):
